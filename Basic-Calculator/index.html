@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic-Calculator</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./1701934939461.png">
+</head>
+<body>
+    <div class="main">
+        <div class="body">
+            <div class="display">
+                self ( trash 🗑️🗑️🗑️ )
+                <div class="display-res" id="display"></div>
+            </div>
+            <div class="buttons">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th><div class="btn1"><button onclick="click0(this.innerText)">AC</button></div></th>
+                            <th><div class="btn1"><button onclick="click0(this.innerText)">+/-</button></div></th>
+                            <th><div class="btn1"><button onclick="click0(this.innerText)">%</button></div></th>
+                            <th><div class="btn2"><button onclick="click0('/')">÷</button></div></th>
+                        </tr>
+                        <tr>
+                            <th><div class="btn3"><button onclick="click0(this.innerText)">7</button></div></th>
+                            <th><div class="btn3"><button onclick="click0(this.innerText)">8</button></div></th>
+                            <th><div class="btn3"><button onclick="click0(this.innerText)">9</button></div></th>
+                            <th><div class="btn2"><button onclick="click0('*')">x</button></div></th>
+                        </tr>
+                        <tr>
+                            <th><div class="btn3"><button onclick="click0(this.innerText)">4</button></div></th>
+                            <th><div class="btn3"><button onclick="click0(this.innerText)">5</button></div></th>
+                            <th><div class="btn3"><button onclick="click0(this.innerText)">6</button></div></th>
+                            <th><div class="btn2"><button onclick="click0(this.innerText)">-</button></div></th>
+                        </tr>
+                        <tr>
+                            <th><div class="btn3"><button onclick="click0(this.innerText)">1</button></div></th>
+                            <th><div class="btn3"><button onclick="click0(this.innerText)">2</button></div></th>
+                            <th><div class="btn3"><button onclick="click0(this.innerText)">3</button></div></th>
+                            <th><div class="btn2"><button onclick="click0(this.innerText)">+</button></div></th>
+                        </tr>
+                        <tr>
+                            <th><div class="btn3"><button onclick="click0(this.innerText)">0</button></div></th>
+                            <th><div class="btn3"><button onclick="click0(this.innerText)">.</button></div></th>
+                            <th><div class="btn2"><button onclick="calculate()">=</button></div></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="body">
+            <div class="display">
+                eval ( OP 🔥🔥🔥 )
+                <div class="display-res" id="display2"></div>
+            </div>
+            <div class="buttons">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th><div class="btn1"><button onclick="click1(this.innerText)">AC</button></div></th>
+                            <th><div class="btn1"><button onclick="click1(this.innerText)">+/-</button></div></th>
+                            <th><div class="btn1"><button onclick="click1(this.innerText)">%</button></div></th>
+                            <th><div class="btn2"><button onclick="click1('/')">÷</button></div></th>
+                        </tr>
+                        <tr>
+                            <th><div class="btn3"><button onclick="click1(this.innerText)">7</button></div></th>
+                            <th><div class="btn3"><button onclick="click1(this.innerText)">8</button></div></th>
+                            <th><div class="btn3"><button onclick="click1(this.innerText)">9</button></div></th>
+                            <th><div class="btn2"><button onclick="click1('*')">x</button></div></th>
+                        </tr>
+                        <tr>
+                            <th><div class="btn3"><button onclick="click1(this.innerText)">4</button></div></th>
+                            <th><div class="btn3"><button onclick="click1(this.innerText)">5</button></div></th>
+                            <th><div class="btn3"><button onclick="click1(this.innerText)">6</button></div></th>
+                            <th><div class="btn2"><button onclick="click1(this.innerText)">-</button></div></th>
+                        </tr>
+                        <tr>
+                            <th><div class="btn3"><button onclick="click1(this.innerText)">1</button></div></th>
+                            <th><div class="btn3"><button onclick="click1(this.innerText)">2</button></div></th>
+                            <th><div class="btn3"><button onclick="click1(this.innerText)">3</button></div></th>
+                            <th><div class="btn2"><button onclick="click1(this.innerText)">+</button></div></th>
+                        </tr>
+                        <tr>
+                            <th><div class="btn3"><button onclick="click1(this.innerText)">0</button></div></th>
+                            <th><div class="btn3"><button onclick="click1(this.innerText)">.</button></div></th>
+                            <th><div class="btn2"><button onclick="calculate1()">=</button></div></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
