@@ -1,23 +1,31 @@
 :root {
-    --nav: 22vw;
+    --nav: 20vw;
     --content: calc(100vw - var(--nav));
     --nav-logo: 27%;
     --nav-text: calc(100% - var(--nav-logo));
     --head: 22vh;
     --main: calc(100vh - var(--head));
+    --project: calc(100vw - var(--nav) - 21vw);
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+  }
+::-webkit-scrollbar-thumb {
+    background: rgba(34, 34, 34, 0.865); 
+    border-radius: 10px;
+  }
 *{
     margin: 0;
     border: 0;
     padding: 0;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
     background-color: transparent;
     overflow: hidden;
 }
 
 body{
+    color: white;
     background-color: rgb(0, 0, 0);
 }
 
@@ -35,7 +43,7 @@ body{
     overflow-y:visible;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    background-color: rgb(0, 162, 255);
+    background-color: rgb(1, 121, 191);
 }
 .nav-content{
     padding: 20px;
@@ -45,15 +53,27 @@ body{
     display: flex;
     margin: 2px;
     margin-bottom: 6vh;
+    cursor: default;
 }
 .nav-option{
     padding-bottom: calc(6vh + 10px);
 }
 .option{
-    width: 100%;
+    width: 98%;
+    height: 40px;
     display: flex;
     margin: 2px;
     margin-bottom: 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 300ms;
+}
+.option:hover{
+    background-color: rgba(0, 68, 107, 0.859);
+}
+.option:hover .text{
+    font-size: large;
 }
 .logo, .logo1 {
     width: var(--nav-logo);
@@ -76,6 +96,8 @@ body{
 }
 .option .text{
     font-size: medium;
+    transition-property: font-size;
+    transition-duration: 300ms;
 }
 
 
@@ -100,7 +122,7 @@ body{
     gap: 3px;
     padding-left: 1px;
     padding-right: 5px;
-    background-color: rgb(19, 19, 19);
+    background-color: rgb(30, 30, 30);
     box-shadow: 0 0 3px  rgb(110, 110, 110);
 }
 .search{
@@ -120,6 +142,7 @@ body{
     padding-left: 10px;
     padding-right: 20px;
     cursor: pointer;
+    color: white;
 }
 .form div{
     width: 80%;
@@ -149,8 +172,10 @@ body{
     cursor: pointer;
 }
 .prof{
-    height: 50px;
-    width: 50px;
+    min-height: 50px;
+    max-height: 51px;
+    max-width: 51px;
+    min-width: 50px;
     border-radius: 100px;
     margin-left: 10px;
     margin-right: 10px;
@@ -171,29 +196,32 @@ body{
     padding-right: 10px;
 }
 .profile{
+    width: 40vw;
     grid-area: profile;
-    display: grid;
-    grid-template-areas: 
-        "prof intro"
-        "prof prof-name";
-    gap: 3px;
-    grid-template-columns: 0.25fr;
+    display: flex;
+    align-items: center;
 }
 #bb{
     display: flex;
     align-items: center;
-    grid-area: prof;
+}
+#aa{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
 }
 .prof1{
-    height: 65px;
-    width: 65px;
+    min-height: 65px;
+    max-height: 66px;
+    max-width: 66px;
+    min-width: 65px;
     border-radius: 100px;
     margin-left: 10px;
     margin-right: 10px;
     border-style: dashed;
     border-color: aliceblue;
     border-width: 1px;
-    align-items: center;
     cursor: pointer;
     background-color: rgb(90, 90, 90);
 }
@@ -202,18 +230,15 @@ body{
     width: 100%;
 }
 .intro{
-    grid-area: intro;
-    display: flex;
-    align-items: end;
+    min-width: 80px;
     font-size: small;
 }
 .prof-name{
-    grid-area: prof-name;
+    min-width: 200px;
     font-size: large;
     font-weight: bold;
 }
 .button1{
-    grid-area: button;
     display: flex;
     align-items: center;   
 }
@@ -223,10 +248,156 @@ body{
     border-radius: 40px;
     margin: 5px;
     margin-right: 50px;
+    color: white;
+    cursor: pointer;
     background-color: rgb(0, 162, 255);
+    transition-property: font-size, box-shadow;
+    transition-duration: 300ms;
+}
+.button1 button:hover{
+    font-size: medium;
+    box-shadow: 0 0 10px #39cbec;
 }
 .main1{
     grid-area: main1;
     height: var(--main);
     width: 100%;
+    display: grid;
+    grid-template-areas: 
+        "projects announce"
+        "projects announce"
+        "projects trending";
+    gap: 3px;
+    grid-template-rows: 150px;
+    grid-template-columns: var(--project);
+}
+
+.projects{
+    grid-area: projects;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 8px;
+    overflow-y: visible;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    cursor: pointer;
+    min-height: 235px;
+    height: auto;
+    min-width: 300px;
+    width: 22vw;
+    margin: 0.7vw;
+    border-radius: 15px;
+    display: flex;
+    justify-content: end;
+    transition-property: width;
+    transition-duration: 300ms;
+}
+.card:hover{
+    width: 23vw;
+}
+.card-content:hover{    
+    background-color: rgba(79, 79, 79, 0.444);
+    border-color: rgb(238, 111, 0);
+}
+.card-content{
+    width: 100%;
+    border-left: solid 8px rgb(243, 138, 18);
+    background-color: rgb(30, 30, 30);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition-property: background-color, border-color;
+    transition-duration: 300ms;
+}
+.project-name{
+    padding: 15px;
+    padding-top: 30px;
+    padding-right: 50px;
+}
+.project-name h5{
+    font-weight: lighter;
+    color: rgb(170, 170, 170);
+}
+.project-btn{
+    padding: 15px;
+    padding-right: 25px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.btn{
+    cursor: pointer;
+    margin-left: 20px;
+    width: 25px;
+    transition-property: width;
+    transition-duration: 300ms;
+}
+.btn:hover{
+    width: 28px;
+}
+.kk{
+    transition: all 300ms;
+}
+.btn svg:hover{
+    color: rgb(243, 138, 18);
+}
+.announce{
+    grid-area: announce;
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 8px;
+}
+.anounce-content{
+    height: 91%;
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 8px;
+    background-color: rgb(30, 30, 30);
+}
+.cc{
+    width: 100%;
+    height: 100%;
+    overflow-y: visible;
+}
+.ano-content{
+    cursor: pointer;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 0;
+}
+.ano-content h4, .ano-content h5{
+    font-size: small;
+    padding:10px;
+    padding-top: 0;
+}
+.ano-content h5{
+    font-size: smaller;
+    font-weight: lighter;
+    color: rgb(170, 170, 170);
+    padding-bottom: 30px;
+}
+.border{
+    border-bottom: solid 2px white;
+}
+.trending{
+    grid-area: trending;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 8px;
+}
+.trending-content{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 500ms ;
+}
+.trending-content:hover{
+    background-color: rgba(134, 134, 134, 0.707);
 }
