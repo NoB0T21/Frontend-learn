@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Login = () => {
+const Login = ({handleLogin}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -8,10 +8,11 @@ const Login = () => {
     e.preventDefault()
     setEmail('')
     setPassword('')
+    handleLogin(email,password)
   }
 
   return (
-    <div className="w-screen text-white h-screen flex items-center justify-center bg-zinc-900 text-white">
+    <div className="w-screen h-screen flex items-center justify-center bg-zinc-900 text-white">
         <div className="form p-5 text-white gap-5 flex flex-col items-center justify-center border-2 border-indigo-500 rounded-xl">
           <h1 className="text-3xl">login Users</h1>
           <form 
