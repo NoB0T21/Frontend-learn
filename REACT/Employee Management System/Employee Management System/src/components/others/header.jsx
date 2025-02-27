@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-const Header = ({data}) => {
+const Header = (props) => {
   const logOut = () => {
     localStorage.setItem('loggedInUser','')
-    window.location.reload()
+    props.changeUser("")
   }
 
   const [name , setName] = useState('Aryan')
@@ -11,8 +11,8 @@ const Header = ({data}) => {
   useEffect(() => {
     const user = localStorage.getItem('loggedInUser')
       if(user != '{"role":"admin"}'){
-        setName(`${data.firstName}`)
-        setProfile(`${data.profile}`)
+        setName(`${props.data.firstName}`)
+        setProfile(`${props.data.profile}`)
       }
   }, [])
 

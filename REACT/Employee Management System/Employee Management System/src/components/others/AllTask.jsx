@@ -16,8 +16,8 @@ const AllTask = () => {
         <h2 className='text-xl'>Failed</h2>
       </div>
       <div id='tasklist' className=' h-29 overflow-y-auto '>
-        {userData.map((e) => {
-          return <div className=' border-indigo-500 border-2 w-full h-15 mb-2 p-5 flex justify-between items-center rounded-md'>
+        {userData.map((e , idx) => {
+          return <div key={idx} className=' border-indigo-500 border-2 w-full h-15 mb-2 p-8 flex justify-between items-center rounded-md'>
               <img className='h-13 w-13 rounded-md object-cover' src={e.profile}></img>
               <h2>{e.firstName}</h2>
               <h2 className='text-yellow-400 text-xl w-1'>{e.taskCounts.newTask}</h2>
